@@ -1,0 +1,20 @@
+{%if artist %}
+
+<h1>{{artist.name}}</h1>
+<div id="artistDesc">
+	Testing olding data until I can get it from last fm
+</div>
+<h2>Albums we play</h2>
+<ul>
+{% for album in albums %}
+<li><a href="/wras/album/id/{{album.id}}">{{album.title}}</a></li>
+		<h3>Songs</h3>
+	<ul>
+	{% for track in tracks %}
+		<li>{{track.title}}</li>
+	{% endfor %}
+	</ul>
+{% endfor %}
+</ul>
+{% endif %}
+

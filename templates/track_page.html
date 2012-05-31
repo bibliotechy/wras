@@ -1,0 +1,14 @@
+{% if track %}
+
+<h1>{{track.title}}</h1>
+
+<h2>by  <a href="/wras/artist/id/{{track.artist.id}}">{{track.artist.name}}</a> 
+	from the album <a href="/wras/artist/id/{{track.album.title}}">{{track.album.title}}</a>
+</h2>
+
+<div id="trackDesc">Holding text till I can get data from last.fm</div>
+
+{% else %}
+<h2>We ain't got that track yet. We'll get it soon though!</h2>
+
+{% endif %}

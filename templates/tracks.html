@@ -1,0 +1,9 @@
+{% if latest_songs %}
+    <ul>
+    {% for song in latest_songs %}
+        <li><a href="/polls/{{ song.id }}/">{{ song.title }} by {{ song.artist.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}

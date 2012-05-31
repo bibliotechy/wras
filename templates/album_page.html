@@ -1,0 +1,20 @@
+{% if album %}
+
+<h1>{{album.title}} </h1>
+
+<h2>by <a href="/wras/artist/id/{{album.artist.id}}">{{album.artist.name}}</a></h2>
+
+<div id="albumDesc">Holding text until I get data from last.fm</div>
+
+<h3>Tracks we've played</h3>
+
+<ul>
+{% for track in tracks %}
+<li><a href="/wras/track/id/{{track.id}}">{{track.title}}</a></li>	
+{% endfor %}
+</ul>
+
+{% else %}
+
+<h1> We don't actually have that album yet! Let us know if we shoudl be playing it.</h1>
+{% endif %}
