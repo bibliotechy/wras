@@ -3,10 +3,9 @@ from django.shortcuts import render_to_response
 import pylast
 
 def index(request):
-    latest_songs = Track.objects.all()
-    for song in latest_songs:
-# lookup the song on lstt.fm	
-    return render_to_response('tracks.html',{'latest_songs':latest_songs})
+  latest_songs = Track.objects.all()
+# lookup the song on lstt.fm
+  return render_to_response('tracks.html',{'latest_songs':latest_songs})
     
 def artist_page(request, artist_name=None, id=None):
     if artist_name: 
@@ -35,7 +34,7 @@ def track_page(request,track_title=None,id=None):
         track       = Track.objects.get(pk=id)
     return render_to_response('track_page.html',{'track':track})
 
-def song_proxy(request, artist, title):
-	artist = Artist.objects.get(name=artist)
-	track  = Track.objects.get(name=track)
-    network = pylast.LastFMNetwork()
+#def song_proxy(request, artist, title):
+#	artist = Artist.objects.get(name=artist)
+#	track  = Track.objects.get(name=track)
+ #   network = pylast.LastFMNetwork()

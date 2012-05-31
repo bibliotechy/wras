@@ -1,5 +1,9 @@
 # Django settings for music project.
 
+from os import getcwd
+
+musicroot = getcwd()
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -12,7 +16,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '/home/cbn/wras/data/wras.sql',                      # Or path to database file if using sqlite3.
+        'NAME': musicroot + '/data/wras.sql',                      # Or path to database file if using sqlite3.
         'USER': '',                      # Not used with sqlite3.
         'PASSWORD': '',                  # Not used with sqlite3.
         'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
@@ -57,7 +61,7 @@ MEDIA_URL = ''
 # Examples: "http://foo.com/media/", "/media/".
 ADMIN_MEDIA_PREFIX = '/media/'
 
-STATIC_ROOT = "/home/cbn/wras/static/"
+STATIC_ROOT = musicroot + "static/"
 
 STATIC_URL = "www.wras.org/static"
 
@@ -82,7 +86,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'music.urls'
 
 TEMPLATE_DIRS = (
-	"/home/cbn/wras/templates/"
+	musicroot + "/templates/"
 )
 
 INSTALLED_APPS = (
